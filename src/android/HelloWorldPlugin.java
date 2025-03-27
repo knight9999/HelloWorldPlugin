@@ -11,9 +11,12 @@ public class HelloWorldPlugin extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args,
 			CallbackContext callbackContext) throws JSONException {
-		callbackContext.success("HelloWorldPlugin");
-		
-		return true;
+		if (action.equals("say")) {
+			String message = args.getString(0);
+			callbackContext.success("HelloWorldPlugin: " + message);
+			return true;
+		}
+		return false;
 	}
 
 }

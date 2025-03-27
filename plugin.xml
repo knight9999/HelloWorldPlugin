@@ -22,4 +22,15 @@
     <source-file src="src/android/HelloWorldPlugin.java" target-dir="src/com/example/plugin" />
   </platform>
 
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="HelloWorldPlugin">
+        <param name="ios-package" value="HelloWorldPlugin" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/HelloWorldPlugin.h" />
+    <source-file src="src/ios/HelloWorldPlugin.m" />
+  </platform>
+
+
 </plugin>
